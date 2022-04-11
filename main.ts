@@ -10,7 +10,9 @@ input.onButtonPressed(Button.A, function () {
     }
 })
 input.onButtonPressed(Button.AB, function () {
-	
+    if (User_ == Random_) {
+    	
+    }
 })
 input.onButtonPressed(Button.B, function () {
     if (User_ <= 0) {
@@ -22,5 +24,6 @@ input.onButtonPressed(Button.B, function () {
     }
 })
 let User_ = 0
-let Random_ = randint(0, 20)
+let Random_ = 0
+Random_ = randint(0, 20)
 User_ = 0
