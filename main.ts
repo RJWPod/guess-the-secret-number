@@ -11,7 +11,45 @@ input.onButtonPressed(Button.A, function () {
 })
 input.onButtonPressed(Button.AB, function () {
     if (User_ == Random_) {
-    	
+        music.playTone(349, music.beat(BeatFraction.Quarter))
+        music.playTone(494, music.beat(BeatFraction.Half))
+        basic.showLeds(`
+            . . . . .
+            . . . . #
+            . . . # .
+            # . # . .
+            . # . . .
+            `)
+        basic.pause(500)
+        basic.clearScreen()
+        User_ = 0
+        Random_ = randint(0, 20)
+    } else if (User_ < Random_) {
+        music.playTone(440, music.beat(BeatFraction.Half))
+        music.playTone(466, music.beat(BeatFraction.Half))
+        music.playTone(494, music.beat(BeatFraction.Half))
+        basic.showLeds(`
+            . . # . .
+            . # # # .
+            # . # . #
+            . . # . .
+            . . # . .
+            `)
+        basic.pause(500)
+        basic.clearScreen()
+    } else if (User_ > Random_) {
+        music.playTone(494, music.beat(BeatFraction.Half))
+        music.playTone(466, music.beat(BeatFraction.Half))
+        music.playTone(440, music.beat(BeatFraction.Half))
+        basic.showLeds(`
+            . . # . .
+            . . # . .
+            # . # . #
+            . # # # .
+            . . # . .
+            `)
+        basic.pause(500)
+        basic.clearScreen()
     }
 })
 input.onButtonPressed(Button.B, function () {
