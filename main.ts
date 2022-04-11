@@ -11,8 +11,8 @@ input.onButtonPressed(Button.A, function () {
 })
 input.onButtonPressed(Button.AB, function () {
     if (User_ == Random_) {
-        music.playTone(349, music.beat(BeatFraction.Quarter))
-        music.playTone(494, music.beat(BeatFraction.Half))
+        music.playTone(587, music.beat(BeatFraction.Quarter))
+        music.playTone(698, music.beat(BeatFraction.Half))
         basic.showLeds(`
             . . . . .
             . . . . #
@@ -24,6 +24,7 @@ input.onButtonPressed(Button.AB, function () {
         basic.clearScreen()
         User_ = 0
         Random_ = randint(0, 20)
+        basic.showNumber(User_)
     } else if (User_ < Random_) {
         music.playTone(440, music.beat(BeatFraction.Half))
         music.playTone(466, music.beat(BeatFraction.Half))
@@ -65,3 +66,4 @@ let User_ = 0
 let Random_ = 0
 Random_ = randint(0, 20)
 User_ = 0
+basic.showNumber(User_)
