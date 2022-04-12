@@ -1,17 +1,13 @@
 input.onButtonPressed(Button.A, function () {
-    basic.showNumber(Counting_)
-    for (let index = 0; index < 9; index++) {
-        Counting_ += -1
-        basic.showNumber(Counting_)
+    if (User_ >= 0) {
+        if (User_ >= 20) {
+            User_ = 20
+            basic.showNumber(User_)
+        } else {
+            User_ += 1
+            basic.showNumber(User_)
+        }
     }
-    basic.pause(1000)
-})
-input.onButtonPressed(Button.AB, function () {
-    for (let index = 0; index < 100; index++) {
-        Adding_ += 1
-        Sum = Adding_ + Sum
-    }
-    basic.showNumber(Sum)
 })
 input.onButtonPressed(Button.B, function () {
     if (User_ <= 0) {
@@ -84,17 +80,11 @@ input.onGesture(Gesture.Shake, function () {
         basic.showNumber(User_)
     }
 })
-let Sum = 0
-let Adding_ = 0
-let Counting_ = 0
 let _of_Guesses = 0
 let User_ = 0
 let Random_ = 0
 Random_ = randint(0, 20)
 User_ = 0
 _of_Guesses = 0
-Counting_ = 9
-Adding_ = 0
-Sum = 0
 basic.showString("T=#tries")
 basic.showNumber(User_)
